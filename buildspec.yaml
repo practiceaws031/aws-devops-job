@@ -1,0 +1,18 @@
+version: "3"
+env:
+  variables:
+     Name: "satheesh"
+phases:
+   install:
+      commands: ./install_terraform.sh
+   pre_build:
+      commands:
+         - echo "adding ssh key"
+         - chmod 700 ssh_key.sh
+         - ./ssh_key.sh
+   build:
+      commands:
+        - chmod 700 deploy_terraform.sh 
+        - ./deploy_terraform.sh
+   post_build:
+      commands: echo "done execution"                   
