@@ -4,7 +4,9 @@ env:
      Name: "satheesh"
 phases:
    install:
-      commands: ./install_terraform.sh
+      commands: 
+        - chmod 700 install_terraform.sh
+        - ./install_terraform.sh
    pre_build:
       commands:
          - echo "adding ssh key"
